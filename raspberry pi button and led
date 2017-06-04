@@ -1,0 +1,32 @@
+#import the libraries
+import RPi.GPIO as GPIO
+import time
+
+
+# OFF gpio warning off
+GPIO.setwarnings(False)
+
+#set the GPIO mode
+GPIO.setmode(GPIO.BCM)
+
+button01 = 17
+led_red = 18
+
+#set led gpio pin
+GPIO.setup(led_red, GPIO.OUT)
+
+#seting up a button
+GPIO.setup(button01, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+
+
+while True:
+    input_state = GPIO.input(button01)
+    if input_state == False:
+        GPIO.output(led_red,True)
+        print ("Button Pressed led red on")
+        time.sleep(10)
+        GPIO.output(led_red, False)
+        print ("led Red OFF")
+        
+    
