@@ -1,0 +1,26 @@
+#import libraries
+import RPi.GPIO as GPIO
+
+import time
+
+#set gpio warning off
+GPIO.setwarnings(False)
+
+#set gpio mode
+GPIO.setmode(GPIO.BCM)
+
+#set 17 as buzzer
+buzzer = 17
+
+#set buzzer pin as output
+GPIO.setup(buzzer,GPIO.OUT)
+
+#On buzzer
+
+GPIO.output(buzzer,True)
+print("buzzer On")
+
+time.sleep(0.5)
+GPIO.output(buzzer,False)
+print("buzzer Off")
+
