@@ -1,0 +1,22 @@
+#import the libraries
+import RPi.GPIO as GPIO
+import time
+
+
+# OFF gpio warning off
+GPIO.setwarnings(False)
+
+#set the GPIO mode
+GPIO.setmode(GPIO.BCM)
+
+
+
+#seting up a button
+GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+while True:
+    input_state = GPIO.input(17)
+    if input_state == False:
+        print ("Button Pressed")
+        time.sleep(0.2)
+
