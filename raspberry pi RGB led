@@ -1,0 +1,43 @@
+#import the libraries
+import RPi.GPIO as GPIO
+import time
+
+
+# OFF gpio warning off
+GPIO.setwarnings(False)
+
+#set the GPIO mode
+GPIO.setmode(GPIO.BCM)
+
+#Set the led GPIO number
+led_red = 17
+led_green = 18
+led_blue = 27
+
+#set the led gpio pin as an output
+GPIO.setup(led_red, GPIO.OUT)
+GPIO.setup(led_green, GPIO.OUT)
+GPIO.setup(led_blue, GPIO.OUT)
+
+#LED RGB
+GPIO.output(led_red, True)
+print ("led Red ON")
+    
+time.sleep(5)
+GPIO.output(led_red,False)
+print ("led Red OFF")
+
+GPIO.output(led_green, True)
+print ("Led green ON")
+    
+time.sleep(5)
+GPIO.output(led_green,False)
+print ("led green OFF")
+
+GPIO.output(led_blue, True)
+print ("Led blue ON")
+    
+time.sleep(5)
+GPIO.output(led_blue,False)
+print ("led blue OFF")
+
