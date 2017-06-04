@@ -1,1 +1,25 @@
-n n n
+#import the libraries
+import RPi.GPIO as GPIO
+import time
+
+
+# OFF gpio warning off
+GPIO.setwarnings(False)
+
+#set the GPIO mode
+GPIO.setmode(GPIO.BCM)
+
+#Set the led GPIO number
+LED = 17
+
+#set the led gpio pin as an output
+GPIO.setup(LED, GPIO.OUT)
+
+# ON OFF led 17 5sec 
+
+GPIO.output(LED, True)
+print ("LED 17 ON")
+    
+time.sleep(5)
+GPIO.output(LED,False)
+print ("LED 17 OFF")
